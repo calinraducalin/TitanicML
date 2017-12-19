@@ -175,12 +175,12 @@ def output_result(y_test):
     # Create a data frame with two columns: PassengerId & Survived
     PassengerId = np.array(test["PassengerId"]).astype(int)
     my_solution = pd.DataFrame(y_test, PassengerId, columns=["Survived"])
-    prediction_file = my_solution.to_csv(path_or_buf="prediction.csv", index_label="PassengerId")
+    my_solution.to_csv(path_or_buf="prediction.csv", index_label="PassengerId")
 
 
 # explore_data()
 feature_engineering()
-visualize_data()
-cross_validation()
+# visualize_data()
+# cross_validation()
 y_test = svm_train()
-# output_result(y_test)
+output_result(y_test)
